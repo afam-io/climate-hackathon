@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import { Button, MenuItem, TextField } from '@mui/material'
+import React, { useState } from 'react';
+import { Button, MenuItem, TextField } from '@mui/material';
 
 export default function CarbonForm() {
-
-  const[formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({});
 
   const travel = [
     {
@@ -48,44 +47,75 @@ export default function CarbonForm() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(formData)
-  }
+    console.log(formData);
+  };
 
-
-  return <div  style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '80%', margin: 'auto', margin: '20px' }}>
-        <TextField style={{ padding: '20px'}}
-          id="outlined-select-currency"
-          select
-          name="teamName"
-          label="Team Name"
-          value={formData.teamName}
-          onChange={handleInput}
-          helperText="Please select your team name"
-        >
-          {teamnames.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-    <TextField
-          style={{ padding: '20px'}}
-          id="outlined-select-currency"
-          select
-          name="transportType"
-          label="Travel Type"
-          value={formData.transportType}
-          onChange={handleInput}
-          helperText="Please select your transport type"
-        >
-          {travel.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField style={{ padding: '20px'}} id="outlined-basic" label="Post Code Start" variant="outlined" onChange={handleInput} name="postCodeStart"/>
-        <TextField style={{ padding: '20px'}} id="outlined-basic" name="postCodeEnd" label="Post Code End" variant="outlined" onChange={handleInput}/>
-        <Button style={{ padding: '20px'}} onClick={handleClick} variant="contained">Submit</Button>
-  </div>;
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        width: '80%',
+        // margin: 'auto',
+        margin: '20px',
+      }}
+    >
+      <TextField
+        style={{ padding: '20px' }}
+        id='outlined-select-currency'
+        select
+        name='teamName'
+        label='Team Name'
+        value={formData.teamName || ''}
+        onChange={handleInput}
+        helperText='Please select your team name'
+      >
+        {teamnames.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
+      <TextField
+        style={{ padding: '20px' }}
+        id='outlined-select-currency'
+        select
+        name='transportType'
+        label='Travel Type'
+        value={formData.transportType || ''}
+        onChange={handleInput}
+        helperText='Please select your transport type'
+      >
+        {travel.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
+      <TextField
+        style={{ padding: '20px' }}
+        id='outlined-basic'
+        label='Post Code Start'
+        variant='outlined'
+        onChange={handleInput}
+        name='postCodeStart'
+      />
+      <TextField
+        style={{ padding: '20px' }}
+        id='outlined-basic'
+        name='postCodeEnd'
+        label='Post Code End'
+        variant='outlined'
+        onChange={handleInput}
+      />
+      <Button
+        style={{ padding: '20px' }}
+        onClick={handleClick}
+        variant='contained'
+      >
+        Submit
+      </Button>
+    </div>
+  );
 }
