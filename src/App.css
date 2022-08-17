@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #231fd6;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 4em;
+}
+
+.footer {
+  height: 5vh;
+  width: 100vw;
+  background-color: #231fd6;
+}
