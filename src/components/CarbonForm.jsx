@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button, MenuItem, TextField } from '@mui/material';
 
 export default function CarbonForm() {
-  const [formData, setFormData] = useState({});
-
+  const[formData, setFormData] = useState({})
+  
   const travel = [
     {
       value: 'Car',
@@ -45,10 +45,16 @@ export default function CarbonForm() {
     });
   };
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    console.log(formData);
-  };
+    const data = await fetch(`https://klimaat.app/api/v1/calculate?start=SP79EG&end=WC2N 5DU&transport_mode=driving&key=${process.env.REACT_APP_TOKEN}`, {
+      // method : 'GET',
+      // mode: 'no-cors',
+  })
+      const response = await data.json()
+      console.log(response)
+  }
+
 
   return (
     <div
