@@ -25,16 +25,16 @@ export default function CarbonForm() {
 
   const teamnames = [
     {
-      value: 'Team 1',
-      label: 'Team 1',
+      value: 'Red Team',
+      label: 'Red Team',
     },
     {
-      value: 'Team 2',
-      label: 'Team 2',
+      value: 'Blue Team',
+      label: 'Blue Team',
     },
     {
-      value: 'Team 3',
-      label: 'Team 3',
+      value: 'Green Team',
+      label: 'Green Team',
     },
   ];
 
