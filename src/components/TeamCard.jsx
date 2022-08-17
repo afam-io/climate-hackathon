@@ -1,18 +1,15 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardHeader } from '@mui/material';
 import { red, blue, green } from '@mui/material/colors';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-import { useState } from 'react';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 export default function TeamCard({ name, score, color }) {
   const titleName = name + ' teams carbon spending';
-  const colorString = name.toLowerCase();
   let colorObj = { bgcolor: blue[500] };
   if (color === 'red') {
     colorObj = { bgcolor: red[500] };
@@ -36,7 +33,7 @@ export default function TeamCard({ name, score, color }) {
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'></Typography>
           <Typography variant='h4' color='text.secondary'>
-            ${score}
+            £{score}
           </Typography>
         </CardContent>
       </CardActionArea>
